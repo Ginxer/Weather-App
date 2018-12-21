@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d5h-ao-ecU">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Weather View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="WeatherViewController" customModule="Weather_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VV8-CS-Bdx">
+                                <rect key="frame" x="142.5" y="172" width="90" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gO-hn-A4E">
+                                <rect key="frame" x="133" y="232" width="109" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="℉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vo6-eL-Hxu">
+                                <rect key="frame" x="153.5" y="289" width="68" height="88"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="73"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNj-zz-EeR">
+                                <rect key="frame" x="153" y="410" width="69" height="41"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3gO-hn-A4E" firstAttribute="top" secondItem="VV8-CS-Bdx" secondAttribute="bottom" constant="31" id="3OE-cp-4mQ"/>
+                            <constraint firstItem="3gO-hn-A4E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7E8-7G-EiK"/>
+                            <constraint firstItem="JNj-zz-EeR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cfm-n3-VTk"/>
+                            <constraint firstItem="vo6-eL-Hxu" firstAttribute="top" secondItem="3gO-hn-A4E" secondAttribute="bottom" constant="30" id="IQs-9V-aQg"/>
+                            <constraint firstItem="JNj-zz-EeR" firstAttribute="top" secondItem="vo6-eL-Hxu" secondAttribute="bottom" constant="33" id="dSS-rw-rpV"/>
+                            <constraint firstItem="VV8-CS-Bdx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="108" id="nrt-Q0-3gf"/>
+                            <constraint firstItem="VV8-CS-Bdx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qFn-y8-I2T"/>
+                            <constraint firstItem="vo6-eL-Hxu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xNh-oZ-agc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UOC-ts-zF2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="4pm-NL-CJk">
+                            <connections>
+                                <action selector="refreshButtonPressed:" destination="BYZ-38-t0r" id="6rk-de-qlX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="temperature" destination="vo6-eL-Hxu" id="AFc-bl-Qae"/>
+                        <outlet property="weatherDescription" destination="3gO-hn-A4E" id="reW-FA-Ump"/>
+                        <outlet property="weatherIcon" destination="JNj-zz-EeR" id="1Ra-DZ-XgI"/>
+                        <outlet property="weatherLocation" destination="VV8-CS-Bdx" id="Pb0-c5-Fxw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060" y="132.68365817091455"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fIN-ig-dzU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d5h-ao-ecU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aHe-GY-h0b">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="QYs-NY-H55"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hDK-HZ-Gfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="244" y="133"/>
+        </scene>
+    </scenes>
+</document>
